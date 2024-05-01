@@ -3,27 +3,26 @@ module.exports = {
   parserOptions: {
     project: 'tsconfig.json',
     tsconfigRootDir: __dirname,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
   extends: [
     'eslint:recommended',
-    'standard-with-typescript',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   root: true,
   env: {
     es2021: true,
     node: true,
-    jest: true,
+    jest: true
   },
   ignorePatterns: ['.eslintrc.js'],
   settings: {
-    'import/internal-regex': '^@app/',
+    'import/internal-regex': '^@app/'
   },
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
@@ -36,18 +35,14 @@ module.exports = {
     '@typescript-eslint/member-ordering': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-non-null-assertion': 'error',
-    '@typescript-eslint/quotes': [
-      'error',
-      'single',
-      { allowTemplateLiterals: true },
-    ],
+    '@typescript-eslint/quotes': ['error', 'single', { allowTemplateLiterals: true }],
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/no-shadow': ['error'],
     'max-len': [
       'error',
       {
-        code: 140,
-      },
+        code: 140
+      }
     ],
     'no-restricted-imports': [
       'error',
@@ -55,82 +50,68 @@ module.exports = {
         patterns: [
           {
             group: ['**/src/*', '.*', '../*', './*'],
-            message: 'Please add @app',
-          },
-        ],
-      },
+            message: 'Please add @app'
+          }
+        ]
+      }
     ],
     '@typescript-eslint/restrict-template-expressions': [
       'error',
       {
         allowBoolean: true,
         allowAny: true,
-        allowNullish: true,
-      },
+        allowNullish: true
+      }
     ],
     'import/no-relative-parent-imports': 'error',
     'import/order': [
       'error',
       {
         'newlines-between': 'always',
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-        ],
-      },
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index']
+      }
     ],
+    'import/no-unresolved': 'off',
     '@typescript-eslint/ban-types': [
       'warn',
       {
         types: {
           Object: {
-            message: 'Avoid using the `Object` type. Did you mean `object`?',
+            message: 'Avoid using the `Object` type. Did you mean `object`?'
           },
           Function: {
-            message:
-              'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
+            message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.'
           },
           Boolean: {
-            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?',
+            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?'
           },
           Number: {
-            message: 'Avoid using the `Number` type. Did you mean `number`?',
+            message: 'Avoid using the `Number` type. Did you mean `number`?'
           },
           String: {
-            message: 'Avoid using the `String` type. Did you mean `string`?',
+            message: 'Avoid using the `String` type. Did you mean `string`?'
           },
           Symbol: {
-            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
-          },
-        },
-      },
+            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?'
+          }
+        }
+      }
     ],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        caughtErrors: 'all',
-        args: 'none',
-        ignoreRestSiblings: true,
-      },
-    ],
+    '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-misused-promises': [
       'error',
       {
-        checksVoidReturn: false,
-      },
+        checksVoidReturn: false
+      }
     ],
     '@typescript-eslint/triple-slash-reference': [
       'error',
       {
         path: 'always',
         types: 'prefer-import',
-        lib: 'always',
-      },
-    ],
+        lib: 'always'
+      }
+    ]
   },
   overrides: [
     {
@@ -144,8 +125,8 @@ module.exports = {
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/unbound-method': 'off',
-        'no-restricted-imports': 'off',
-      },
-    },
-  ],
-};
+        'no-restricted-imports': 'off'
+      }
+    }
+  ]
+}
