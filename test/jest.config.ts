@@ -30,7 +30,7 @@ const BaseConfig = {
       }
     ]
   },
-  // setupFiles: ['reflect-metadata'],
+  setupFiles: ['reflect-metadata'],
   globalSetup: '<rootDir>/test/e2e/setup.ts',
   globalTeardown: '<rootDir>/test/e2e/teardown.ts',
   moduleFileExtensions: ['js', 'json', 'ts'],
