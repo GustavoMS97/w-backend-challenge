@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  app:
+    container_name: task-challenge
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '${PORT}:${PORT}'
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT}
+      - PORT=${PORT}
+      - MONGO_URL=${MONGO_URL}
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
