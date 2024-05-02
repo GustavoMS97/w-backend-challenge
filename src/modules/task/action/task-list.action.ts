@@ -24,7 +24,7 @@ export class TaskListAction {
       const tasks = await this.taskMongooseRepository.findByQuery(input)
       return tasks
     } catch (error) {
-      throw new Error(`Unknown error during task creation: ${JSON.stringify(error, Object.getOwnPropertyNames(error))}`)
+      throw new Error(`Unknown error during task query: ${JSON.stringify(error, Object.getOwnPropertyNames(error))}`)
     }
   }
 
