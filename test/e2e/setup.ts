@@ -1,7 +1,7 @@
 /* eslint-disable import/no-relative-parent-imports */
 import { MongoMemoryServer } from 'mongodb-memory-server'
 
-import { NODE_ENV } from '../../src/shared/environment-variables/enum/node-env.enum'
+import { NODE_ENV } from '../../src/shared/helpers/validate-environment-variables.helper'
 
 const mockMongoDatabase = async (): Promise<string> => {
   const mongod = await MongoMemoryServer.create()

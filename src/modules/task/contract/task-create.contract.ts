@@ -55,7 +55,7 @@ class TaskCreateOutput {
 
 function mapTaskCreateOutput(data: Task): TaskCreateOutput {
   return {
-    id: data._id.toString(),
+    id: data._id?.toString(),
     title: data.title,
     description: data.description,
     priority: data.priority,

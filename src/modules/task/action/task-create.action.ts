@@ -5,7 +5,7 @@ import { validateOrReject } from 'class-validator'
 import TaskMongooseRepository from '@app/modules/task/task-mongoose.repository'
 import { Task } from '@app/modules/task/task.entity'
 import { TASK_STATUS } from '@app/modules/task/enum/task-status.enum'
-import { TaskCreateInput, TaskCreateOutput, mapTaskCreateOutput } from '@app/modules/task/action/task-create.contract'
+import { TaskCreateInput, TaskCreateOutput, mapTaskCreateOutput } from '@app/modules/task/contract/task-create.contract'
 import isValidationErrorArray from '@app/shared/helpers/check-validation-error-array.helper'
 
 @Injectable()

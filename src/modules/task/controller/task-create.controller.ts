@@ -2,7 +2,7 @@ import { Body, Controller, HttpStatus, Post } from '@nestjs/common'
 import { ApiBadRequestResponse, ApiInternalServerErrorResponse, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
 
 import { TaskCreateAction } from '@app/modules/task/action/task-create.action'
-import { TaskCreateInput, TaskCreateOutput } from '@app/modules/task/action/task-create.contract'
+import { TaskCreateInput, TaskCreateOutput } from '@app/modules/task/contract/task-create.contract'
 import { BadRequestError, InternalServerError } from '@app/shared/errors/nest-swagger-http.error'
 
 @ApiTags('Task')

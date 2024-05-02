@@ -1,7 +1,26 @@
-import { plainToInstance } from 'class-transformer'
-import { validateSync } from 'class-validator'
+import { Expose, plainToInstance } from 'class-transformer'
+import { IsEnum, IsPort, IsString, validateSync } from 'class-validator'
 
-import EnvironmentVariablesDto from '@app/shared/environment-variables/environment-variables.dto'
+export enum NODE_ENV {
+  DEV = 'dev',
+  TEST = 'test',
+  PRD = 'prd'
+}
+
+export class EnvironmentVariablesDto {
+  @Expose()
+  @IsString()
+  @IsEnum(NODE_ENV)
+  ENVIRONMENT: string
+
+  @Expose()
+  @IsPort()
+  HOST_PORT: string
+
+  @Expose()
+  @IsString()
+  MONGO_URL: string
+}
 
 export function validate(config: Record<string, unknown>): EnvironmentVariablesDto {
   const validatedConfig = plainToInstance(EnvironmentVariablesDto, config, {
