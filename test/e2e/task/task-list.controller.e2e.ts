@@ -128,6 +128,7 @@ describe('TaskCreateController (e2e)', () => {
   })
 
   afterAll(async () => {
+    await taskMongooseRepository.remove({ _id: task._id })
     await app.close()
   })
 
