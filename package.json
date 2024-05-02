@@ -13,6 +13,7 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
+    "start:docker": "docker compose up -d",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test:base": "node --max-old-space-size=8192 node_modules/.bin/jest --runInBand",
     "test": "yarn test:base --config=./test/jest.config.ts",
