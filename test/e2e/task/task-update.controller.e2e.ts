@@ -52,7 +52,7 @@ describe('TaskUpdateController (e2e)', () => {
     })
   })
 
-  it('/task (PUT 400) should throw an error with invalid input data', async () => {
+  it('/task/:id (PUT 400) should throw an error with invalid input data', async () => {
     const response = await request(app.getHttpServer() as App)
       .put(`/task/${task._id.toString()}`)
       .send({ priority: 'a1' })
@@ -62,7 +62,7 @@ describe('TaskUpdateController (e2e)', () => {
     })
   })
 
-  it('/task (PUT 500) should throw an error with internal server error', async () => {
+  it('/task/:id (PUT 500) should throw an error with internal server error', async () => {
     jest.spyOn(MongooseRepositoryAbstract.prototype, 'update').mockRejectedValueOnce(new Error('test'))
     const response = await request(app.getHttpServer() as App)
       .put(`/task/${task._id.toString()}`)
