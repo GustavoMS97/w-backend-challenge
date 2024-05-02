@@ -12,7 +12,7 @@ export class TaskUpdateController {
 
   @ApiOperation({
     operationId: 'TaskUpdate',
-    summary: 'Update task'
+    summary: 'Update task by id'
   })
   @ApiBadRequestResponse({
     type: BadRequestError,
