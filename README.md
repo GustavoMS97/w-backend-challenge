@@ -24,13 +24,32 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is a code challenge using the NestJS framework, with Mongoose/MongoDB as database of choice. My approach was to use domain-driven development for the organization/maintainability of this project and to keep things encapsulated.
+
+The instructions proposed the following:
+
+- Use NestJS ✅
+- Create CRUD for Tasks following specified rules for each of the endpoints ✅
+- Error handling and data validation for the APIs ✅
+- Documentation (Swagger) ✅
+- Implement integration and unit tests (Optional) ✅
+- Deploy the API to a cloud provider (Optional)✅
+- **Bonus**: Dockerize the application ✅
+
+## Information for reviewer
+
+The project is deployed in Render using Docker **[here](https://w-backend-challenge.onrender.com/api)**.
 
 ## Installation
 
 ```bash
 $ yarn install
 ```
+
+## Environment variables
+
+- Copy the [.env.dist](./.env.dist) file
+- Set your environment variables
 
 ## Running the app
 
@@ -43,19 +62,22 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
+
+# Docker mode
+$ yarn run start:docker
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ yarn run test
+$ yarn run test:unit
 
 # e2e tests
 $ yarn run test:e2e
 
-# test coverage
-$ yarn run test:cov
+# complete test coverage
+$ yarn run test
 ```
 
 ## Support
