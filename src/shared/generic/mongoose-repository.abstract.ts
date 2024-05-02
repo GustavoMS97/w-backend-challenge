@@ -21,7 +21,7 @@ export class MongooseRepositoryAbstract<Entity, DocumentType extends Entity & Do
 
   async update(query: UpdateQuery<Entity & Document>, item: Partial<Entity>): Promise<Entity> {
     return this.model
-      .findOneAndUpdate(query, item as UpdateQuery<DocumentType>)
+      .findOneAndUpdate(query, item as UpdateQuery<DocumentType>, { new: true })
       .lean()
       .then((result) => result as Entity)
   }
