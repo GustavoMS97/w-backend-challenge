@@ -2,10 +2,10 @@ import { NestFactory } from '@nestjs/core'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import * as pack from '@root/package.json'
 
-import { AppModule } from '@app/app.module'
+import { MainModule } from '@app/main.module'
 
 async function bootstrap(): Promise<void> {
-  const app = await NestFactory.create(AppModule)
+  const app = await NestFactory.create(MainModule)
 
   const config = new DocumentBuilder()
     .setTitle('Code Challenge')

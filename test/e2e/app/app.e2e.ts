@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing'
 import { INestApplication } from '@nestjs/common'
 import { App } from 'supertest/types'
 
-import { AppModule } from '@app/app.module'
+import { MainModule } from '@app/main.module'
 import { AppService } from '@app/modules/app/app.service'
 
 describe('AppController (e2e)', () => {
@@ -11,7 +11,7 @@ describe('AppController (e2e)', () => {
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule]
+      imports: [MainModule]
     })
       .overrideProvider(AppService)
       .useValue({ getHello: jest.fn().mockReturnValue('Hello World!') })
