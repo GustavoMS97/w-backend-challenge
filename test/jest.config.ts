@@ -11,9 +11,8 @@ const BaseConfig = {
     '.error.ts',
     '.enum.ts',
     '.dto.ts',
-    '.input.ts',
-    '.output.ts',
-    '.abstract.ts'
+    '.abstract.ts',
+    '.entity.ts'
   ],
   coverageThreshold: {
     global: {
