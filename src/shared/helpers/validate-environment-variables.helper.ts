@@ -15,7 +15,7 @@ export class EnvironmentVariablesDto {
 
   @Expose()
   @IsPort()
-  HOST_PORT: string
+  PORT: string
 
   @Expose()
   @IsString()

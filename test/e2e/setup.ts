@@ -12,7 +12,7 @@ const mockMongoDatabase = async (): Promise<string> => {
 
 const envSetup = (mongoDns: string): void => {
   process.env.ENVIRONMENT = NODE_ENV.TEST
-  process.env.HOST_PORT = '3000'
+  process.env.PORT = '3000'
   process.env.MONGO_URL = mongoDns
 }
 
