@@ -11,9 +11,8 @@ const BaseConfig = {
     '.error.ts',
     '.enum.ts',
     '.dto.ts',
-    '.input.ts',
-    '.output.ts',
-    '.abstract.ts'
+    '.abstract.ts',
+    '.entity.ts'
   ],
   coverageThreshold: {
     global: {
@@ -31,7 +30,7 @@ const BaseConfig = {
       }
     ]
   },
-  // setupFiles: ['reflect-metadata'],
+  setupFiles: ['reflect-metadata'],
   globalSetup: '<rootDir>/test/e2e/setup.ts',
   globalTeardown: '<rootDir>/test/e2e/teardown.ts',
   moduleFileExtensions: ['js', 'json', 'ts'],

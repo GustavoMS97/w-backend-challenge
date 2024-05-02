@@ -1,0 +1,37 @@
+name: Build, Lint, Test and Deploy
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    container:
+      image: node:20.12.2
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run lint
+        run: yarn lint
+
+      - name: Download and install libssl
+        run: |
+          wget -O libssl1.1.deb http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1-1ubuntu2.1~18.04.23_amd64.deb
+          dpkg -i libssl1.1.deb
+
+      - name: Run tests
+        run: yarn test

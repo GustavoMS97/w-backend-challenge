@@ -25,6 +25,8 @@ class Task {
   @Type(() => Date)
   @Prop({ required: true, default: Date.now })
   updatedAt: Date
+
+  _id: mongoose.Types.ObjectId
 }
 
 type TaskDocument = Task & mongoose.Document
