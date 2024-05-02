@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing'
+import { ValidationError } from 'class-validator'
+import { HttpException, HttpStatus } from '@nestjs/common'
 
 import { TaskListAction } from '@app/modules/task/action/task-list.action'
 import { TaskListInput, TaskListOutput } from '@app/modules/task/contract/task-list.contract'
 import { TASK_STATUS } from '@app/modules/task/enum/task-status.enum'
 import TaskMongooseRepository from '@app/modules/task/task-mongoose.repository'
 import { Task } from '@app/modules/task/task.entity'
-import { ValidationError } from 'class-validator'
-import { HttpException, HttpStatus } from '@nestjs/common'
 
 describe('TaskListAction', () => {
   let taskListAction: TaskListAction
